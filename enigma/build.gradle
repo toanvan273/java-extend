@@ -1,0 +1,45 @@
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+buildDir="build_gradle"
+
+version = '1.0.0001'
+group = 'itx.java.examples.enigma'
+
+repositories {
+   mavenLocal()
+   mavenCentral()
+}
+
+dependencies {
+   compile 'org.slf4j:slf4j-api:1.7.22'
+   compile 'org.slf4j:slf4j-log4j12:1.7.22'
+   compile 'commons-io:commons-io:2.5'
+   compile 'org.apache.commons:commons-collections4:4.1'
+   compile 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+   testCompile 'org.testng:testng:6.10'
+}
+
+jar {
+   baseName = 'enigma'
+}
+
+task jarSources(type: Jar, dependsOn: classes) {
+   classifier = 'sources'
+   baseName = 'enigma'
+}
+
+task jarJavadoc(type: Jar, dependsOn: javadoc) {
+   classifier = 'javadoc'
+   baseName = 'enigma'
+}
+
+artifacts {
+  archives jar
+  archives jarSources
+  archives jarJavadoc
+}
+

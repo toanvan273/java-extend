@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.5" name="app">
+    <main-class name="itx.examples.modules.application.Main"/>
+    <resources>
+        <resource-root path="modular-application-1.0.0-SNAPSHOT.jar" />
+    </resources>
+    <dependencies>
+        <module name="common"/>
+        <module name="service-client"/>
+        <module name="service-registry"/>
+        <module name="service-module-01"/>
+        <module name="service-module-01-api"/>
+        <module name="service-module-02"/>
+        <module name="service-module-02-api"/>
+    </dependencies>
+</module>

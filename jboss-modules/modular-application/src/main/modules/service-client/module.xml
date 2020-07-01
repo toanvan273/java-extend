@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.5" name="service-client">
+    <resources>
+        <resource-root path="service-client-1.0.0-SNAPSHOT.jar" />
+    </resources>
+    <dependencies>
+        <module name="common"/>
+        <module name="service-module-01-api"/>
+        <module name="service-module-02-api"/>
+    </dependencies>
+</module>
